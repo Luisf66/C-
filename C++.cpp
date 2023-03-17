@@ -1,14 +1,11 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
-    string texto = "Criando tipos e valores...";
-    cout << "Digite os valores para o calculo" << endl;
-    int x;
-    int y;
-    cin >> x;
-    cin >> y;
-    int soma = x + y;
-    cout << "Resultado:" << soma << endl;
+    string nome;
+    cout << "Insira seu nome:" << endl;
+    getline(cin,nome);
+    cout << "Seu nome é:" << nome << endl;
     return 0;
 }
