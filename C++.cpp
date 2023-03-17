@@ -3,9 +3,14 @@
 using namespace std;
 
 int main(){
-    string nome;
-    cout << "Insira seu nome:" << endl;
-    getline(cin,nome);
-    cout << "Seu nome é:" << nome << endl;
+    int numero_1;
+    int numero_2;
+    cin >> numero_1;
+    cin >> numero_2;
+    if ( numero_1 > numero_2){
+        cout << "O número 1 é maior que o 2" << endl;
+    } else {
+        cout << "O número 1 não é maior que o 2" << endl;
+    }
     return 0;
 }
