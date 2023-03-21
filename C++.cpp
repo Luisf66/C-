@@ -3,23 +3,24 @@
 using namespace std;
 
 int main(){
-    struct {
+    struct cadastro {
         int idade;
         string nome;
         double cpf;
         string cidade;
-    } cadastro;
+    };
+    cadastro Cadastro;
     cout << "Digite sua idade:" << endl;
-    cin >> cadastro.idade;
+    cin >> Cadastro.idade;
     cout << "Digite seu nome:" << endl;
-    cin >> cadastro.nome;
+    cin >> Cadastro.nome;
     cout << "Digite seu cpf:" << endl;
-    cin >> cadastro.cpf;
+    cin >> Cadastro.cpf;
     cout << "Digite sua cidade:" << endl;
-    cin >> cadastro.cidade;
-    cout << "Você tem " << cadastro.idade << "anos" << endl;
-    cout << "Seu nome é " << cadastro.nome << endl;
-    cout << "Seu CPF é " << cadastro.cpf << endl;
-    cout << "Você mora em " << cadastro.cidade << endl;
+    cin >> Cadastro.cidade;
+    cout << "Você tem " << Cadastro.idade << "anos" << endl;
+    cout << "Seu nome é " << Cadastro.nome << endl;
+    cout << "Seu CPF é " << Cadastro.cpf << endl;
+    cout << "Você mora em " << Cadastro.cidade << endl;
     return 0;
 }
