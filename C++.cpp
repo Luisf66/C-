@@ -3,29 +3,23 @@
 using namespace std;
 
 int main(){
-    string operacoes[4] = {"Adição","Subtração","Divisão","Multiplicação"};
-    int numero;
-    do{
-        cout << "Digite um número de 0 a 3:" << endl;
-        cin >> numero;
-        switch (numero)
-        {
-        case 0:
-            cout << operacoes[0] << endl;
-            break;
-        case 1:
-            cout << operacoes[1] << endl;
-            break;
-        case 2:
-            cout << operacoes[2] << endl;
-            break;
-        case 3:
-            cout << operacoes[3] << endl;
-            break;
-        default:
-            cout << "Número inválido" << endl;
-            break;
-        }
-    } while (numero != 5);
+    struct {
+        int idade;
+        string nome;
+        double cpf;
+        string cidade;
+    } cadastro;
+    cout << "Digite sua idade:" << endl;
+    cin >> cadastro.idade;
+    cout << "Digite seu nome:" << endl;
+    cin >> cadastro.nome;
+    cout << "Digite seu cpf:" << endl;
+    cin >> cadastro.cpf;
+    cout << "Digite sua cidade:" << endl;
+    cin >> cadastro.cidade;
+    cout << "Você tem " << cadastro.idade << "anos" << endl;
+    cout << "Seu nome é " << cadastro.nome << endl;
+    cout << "Seu CPF é " << cadastro.cpf << endl;
+    cout << "Você mora em " << cadastro.cidade << endl;
     return 0;
 }
