@@ -2,25 +2,34 @@
 #include <string>
 using namespace std;
 
+int soma (int numero_1, int numero_2){
+    return numero_1 + numero_2;
+}
+
+int subtracao (int numero_1,int numero_2){
+    if (numero_1 > numero_2){
+        return numero_1 - numero_2;
+    }
+    else{
+        return numero_2 - numero_1;
+    }
+}
+
 int main(){
-    struct cadastro {
-        int idade;
-        string nome;
-        double cpf;
-        string cidade;
-    };
-    cadastro Cadastro;
-    cout << "Digite sua idade:" << endl;
-    cin >> Cadastro.idade;
-    cout << "Digite seu nome:" << endl;
-    cin >> Cadastro.nome;
-    cout << "Digite seu cpf:" << endl;
-    cin >> Cadastro.cpf;
-    cout << "Digite sua cidade:" << endl;
-    cin >> Cadastro.cidade;
-    cout << "Você tem " << Cadastro.idade << "anos" << endl;
-    cout << "Seu nome é " << Cadastro.nome << endl;
-    cout << "Seu CPF é " << Cadastro.cpf << endl;
-    cout << "Você mora em " << Cadastro.cidade << endl;
+    int numero_1;
+    int numero_2;
+    string operacao;
+    cout << "Digite a operação (A = Adição// S = Subtração):" << endl;
+    cin >> operacao;
+    cout << "Digite o número 1:" << endl;
+    cin >> numero_1;
+    cout << "Digite o número 2:" << endl;
+    cin >> numero_2;
+    if (operacao == "A"){
+        cout << soma(numero_1,numero_2);
+    }
+    else{
+        cout << subtracao(numero_1,numero_2);
+    }
     return 0;
 }
