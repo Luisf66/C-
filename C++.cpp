@@ -46,7 +46,13 @@ int gerador_aleatorio(){
 
 
 int main() {
-    gerador_aleatorio();
-    cout << senha<< endl;
-    
+    string finished;
+    do{
+        gerador_aleatorio();
+        cout << senha<< endl;
+        senha = "";
+        cout << "Gerar nova senha? Y/N" << endl;
+        cin.ignore();
+        getline(cin,finished);
+    } while (finished != "N");
 }
