@@ -7,8 +7,8 @@ using namespace std;
 class MeuMes {
     double renda;
     double gasto;
-    int escolher_mes;
     double saldo;
+    int escolher_mes;
 };
 //cadastro do dinheiro ganho por mês
 double cadastrar_renda(double renda){
@@ -32,10 +32,10 @@ int funcao_mes(int escolher_mes){
     return escolher_mes;
 }
 //calculo do saldo do usuário naquele mês
-double calcular_saldo(int renda,int gasto,double saldo){
+double calcular_saldo(double renda,double gasto,double saldo){
     saldo = renda - gasto;
     cout << "Seu saldo mensal é de:" << saldo << endl;
-    return saldo;
+    return 0;
 }
 
 //função principal
