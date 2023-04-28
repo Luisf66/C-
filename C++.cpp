@@ -33,12 +33,24 @@ double calcular_saldo(double renda,double gasto,double saldo){
     saldo = renda - gasto;
     return saldo;
 }
-//mostrar informações do usuário
-void mostrar_meumes(int escolher_mes,double renda,double gasto,double saldo){
-    cout << "Mês escolhido:" << escolher_mes << endl;
-    cout << "Renda mensal:" << renda << endl;
-    cout << "Gasto mensal:" << gasto << endl;
-    cout << "Seu saldo mensal é de:" << saldo << endl;
+//criar arquivo .TXT
+void criar_arquivo(int escolher_mes,double renda,double gasto,double saldo){
+    ofstream arquivo("receita.txt",ios::app);
+    arquivo << "-----------------" << endl;
+    arquivo << "Mês escolhido:" << escolher_mes << endl;
+    arquivo << "Renda mensal:" << renda << endl;
+    arquivo << "Gasto mensal:" << gasto << endl;
+    arquivo << "Seu saldo mensal é de:" << saldo << endl;
+    arquivo << "-----------------" << endl;
+    arquivo.close();
+}
+//ler arquivo .TXT
+void ler_arquivo(){
+    string texto;
+    ifstream ler("receita.txt");
+    while (getline(ler,texto)){
+        cout << texto << endl;
+    }
 }
 //função principal
 int main(){
@@ -47,5 +59,6 @@ int main(){
     double renda = cadastrar_renda(renda);
     double gasto = cadastrar_gasto(gasto);
     double saldo = calcular_saldo(renda,gasto,saldo);
-    mostrar_meumes(escolher_mes,renda,gasto,saldo);
+    criar_arquivo(escolher_mes,renda,gasto,saldo);
+    ler_arquivo();
 }
