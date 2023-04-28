@@ -55,13 +55,68 @@ void ler_arquivo(){
         cout << texto << endl;
     }
 }
+//buscar mês no arquivo
+int buscar_mes(int mes_escolhido){
+    string linha;
+    ifstream arquivo("receita.txt");
+    bool mes_encontrado = false;
+    cout << "Infrome o mês desejado:" << endl;
+    cin >> mes_escolhido;
+    while (getline(arquivo, linha)){
+        if (linha.find("Mês escolhido:" + to_string(mes_escolhido)) != string::npos){
+            cout << linha << endl;
+            for (int i = 0; i < 3; i++){
+                getline(arquivo, linha);
+                cout << linha << endl;
+            }
+            mes_encontrado = true;
+            break;
+        }
+    }
+    if (!mes_encontrado){
+        cout << "Mês não encontrado." << endl;
+    }
+    arquivo.close();
+    return mes_encontrado;
+}
+//interface
+int interface(){
+    int opcao;
+    cout << "----------------------" << endl;
+    cout << "| Programa de Gestão |" << endl;
+    cout << "|     De Finanças    |" << endl;
+    cout << "----------------------" << endl;
+    cout << "| 1- EXECUTAR        |" << endl;
+    cout << "| 2- BUSCAR MÊS      |" << endl;
+    cout << "| 3- LER ARQUIVO     |" << endl;
+    cout << "| 4- DELETAR ARQUIVO |" << endl;
+    cout << "----------------------" << endl;
+    cin >> opcao;
+    if (opcao == 1){
+        int escolher_mes = funcao_mes(escolher_mes);
+        double renda = cadastrar_renda(renda);
+        double gasto = cadastrar_gasto(gasto);
+        double saldo = calcular_saldo(renda,gasto,saldo);
+        criar_arquivo(escolher_mes,renda,gasto,saldo);
+    }
+    else if (opcao == 2){
+        int escolher_mes = buscar_mes(escolher_mes);
+    }
+    else if (opcao == 3){
+        ler_arquivo();
+    }
+    else{
+        cout << "Nenhuma opção válida selecionada..." << endl;
+    }
+    return 0;
+}
 //função principal
 int main(){
+    int repetir;
     MeuMes meumes;
-    int escolher_mes = funcao_mes(escolher_mes);
-    double renda = cadastrar_renda(renda);
-    double gasto = cadastrar_gasto(gasto);
-    double saldo = calcular_saldo(renda,gasto,saldo);
-    criar_arquivo(escolher_mes,renda,gasto,saldo);
-    ler_arquivo();
+    do{
+        interface();
+        cout << "Executar novamente 1=Sim 0=Não:" << endl;
+        cin >> repetir;
+    }while ( repetir != 0);
 }
