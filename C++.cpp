@@ -12,18 +12,21 @@ class MeuMes {
 };
 //cadastro do dinheiro ganho por mês
 double cadastrar_renda(double renda){
+    cout << "-----------------" << endl;
     cout << "Dinheiro ganho no mês:" << endl;
     cin >> renda;
     return renda;
 }
 //cadastro do dinheiro gasto por mês
 double cadastrar_gasto(double gasto){
+    cout << "-----------------" << endl;
     cout << "Dinheiro gasto no mês:" << endl;
     cin >> gasto;
     return gasto;
 }
 //escolha do mês
 int funcao_mes(int escolher_mes){
+    cout << "-----------------" << endl;
     cout << "Informe o mês" << endl;
     cin >> escolher_mes;
     return escolher_mes;
