@@ -50,10 +50,11 @@ void criar_arquivo(int escolher_mes,double renda,double gasto,double saldo){
 //ler arquivo .TXT
 void ler_arquivo(){
     string texto;
-    ifstream ler("receita.txt");
-    while (getline(ler,texto)){
+    ifstream arquivo("receita.txt");
+    while (getline(arquivo,texto)){
         cout << texto << endl;
     }
+    arquivo.close();
 }
 //buscar mês no arquivo
 int buscar_mes(int mes_escolhido){
@@ -78,6 +79,23 @@ int buscar_mes(int mes_escolhido){
     }
     arquivo.close();
     return mes_encontrado;
+}
+//somar saldos
+double somar_saldos(){
+    string linha;
+    ifstream arquivo("receita.txt");
+    double saldo_mensal;
+    double saldo_total = 0;
+    while (getline(arquivo, linha)){
+        if (linha.find("Seu saldo mensal é de:") != string::npos){
+            int pos = linha.find(":") + 1;
+            saldo_mensal = stod(linha.substr(pos));
+            saldo_total = saldo_total + saldo_mensal;
+        }
+    }
+    cout << "Saldo total: " << saldo_total << endl;
+    arquivo.close();
+    return saldo_mensal;
 }
 //interface
 int interface(){
@@ -104,6 +122,10 @@ int interface(){
     }
     else if (opcao == 3){
         ler_arquivo();
+    }
+    else if (opcao == 4){
+        double saldo = somar_saldos();
+
     }
     else{
         cout << "Nenhuma opção válida selecionada..." << endl;
