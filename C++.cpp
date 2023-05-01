@@ -2,12 +2,13 @@
 #include <string>
 using namespace std;
 
-void troca_valor(int* valor){
-    *valor = 55;
+void troca_valor(int* vetor){
+    *(vetor + 0) = 3;
 }
 
 int main(){
-    int variavel = 10;
-    troca_valor(&variavel);
-    cout << variavel << endl;
+    int* vetor = new int[10];
+
+    troca_valor(vetor);
+    cout << *(vetor + 0) << endl;
 }
