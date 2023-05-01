@@ -2,13 +2,12 @@
 #include <string>
 using namespace std;
 
+void troca_valor(int* valor){
+    *valor = 55;
+}
 
 int main(){
     int variavel = 10;
-    int* ponteiro_variavel;
-
-    ponteiro_variavel = &variavel;
-    *ponteiro_variavel = 15;
+    troca_valor(&variavel);
     cout << variavel << endl;
-    cout << *ponteiro_variavel << endl;
 }
