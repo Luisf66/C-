@@ -2,19 +2,19 @@
 #include <string>
 using namespace std;
 
-void troca_valor(int* vetor){
-    int soma = 0;
-    for (int i = 0; i < 10; i++){
-        int a = 5;
-        soma = soma + a;
-        *(vetor + i) = soma;
-        cout << *(vetor + i) << endl;
-    }
-}
+typedef struct carro {
+    string cor;
+    int ano;
+    string modelo;
+}Carro;
 
 int main(){
-    int* vetor = new int[10];
-    troca_valor(vetor);
-    delete[] vetor;
-    vetor = NULL;
+    Carro carro_um;
+    carro_um.ano = 1987;
+    carro_um.cor = "Amarelo";
+    carro_um.modelo = "Mustang";
+
+    cout << carro_um.modelo << endl;
+    cout << carro_um.cor << endl;
+    cout << carro_um.ano << endl;
 }
