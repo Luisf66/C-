@@ -4,14 +4,17 @@ using namespace std;
 
 
 int main(){
-    float num1;
+    string letra;
 
-    cout << "Numero 1: " << endl;
-    cin >> num1;
-    if (num1 >= 0){
-        cout << "Positivo" << endl; 
+    cout << "Digite uma letra: " << endl;
+    cin >> letra;
+    if (letra == "F" || letra == "f"){
+        cout << "Feminino" << endl; 
+    }
+    else if (letra == "M" || letra == "m"){
+        cout << "Masculino" << endl; 
     }
     else{
-        cout << "Negativo" << endl; 
+        cout << "Indefinido" << endl; 
     }
 }
