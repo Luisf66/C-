@@ -3,23 +3,13 @@
 using namespace std;
 
 int main(){
-    float valor_h,salarioB,salarioL;
-    int hora_t;
-    float taxa1,taxa2,taxa3;
+    float area,lata,gasto;
+    // 1 lata = 54 m = 80 R$
 
-    cout <<"Ganho por hora:"<< endl;
-    cin >> valor_h;
-    cout <<"Hora trabalhada:"<< endl;
-    cin >> hora_t;
-    salarioB = valor_h * hora_t;
-
-    taxa1 = (salarioB *11)/100;
-    taxa2 =  (salarioB *8)/100;
-    taxa3 =  (salarioB *5)/100;
-    salarioL = salarioB - taxa1 - taxa2 - taxa3;
-
-    cout << "Salario bruto:" << salarioB << endl;
-    cout << "Salario liquido:" << salarioL << endl;
-
-
+    cout <<"Area a ser pintada:"<< endl;
+    cin >> area;
+    lata = area / 54;
+    gasto = lata * 80;
+    cout << "Quant. latas:" << lata << endl;
+    cout << "Gasto total:" << gasto << endl;
 }
