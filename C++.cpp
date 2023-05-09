@@ -4,17 +4,18 @@ using namespace std;
 
 
 int main(){
-    string letra;
+    string letra[] = {"a","e","i","o","u"};
+    string letra2;
 
     cout << "Digite uma letra: " << endl;
-    cin >> letra;
-    if (letra == "F" || letra == "f"){
-        cout << "Feminino" << endl; 
-    }
-    else if (letra == "M" || letra == "m"){
-        cout << "Masculino" << endl; 
-    }
-    else{
-        cout << "Indefinido" << endl; 
-    }
+    cin >> letra2;
+    for (int i = 0; i < 5; i++){
+        if (letra2 == letra[i]){
+            cout << "Vogal" << endl;
+            break;
+        }
+        else{
+            cout << "Consoante" << endl;
+        }
+    };
 }
