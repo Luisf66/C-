@@ -4,12 +4,16 @@ using namespace std;
 
 
 int main(){
-    float tamanhoMB,velocidadeMB,tempo;
+    float num1,num2,maior;
 
-    cout << "Tamanho do arquivo: " << endl;
-    cin >> tamanhoMB;
-    cout << "Velocidade da conexão: " << endl;
-    cin >> velocidadeMB;
-    tempo = (tamanhoMB * 8 ) / velocidadeMB;
-    cout << "Tempo estimado:" << tempo <<  endl;
+    cout << "Numero 1: " << endl;
+    cin >> num1;
+    cout << "Numero 2: " << endl;
+    cin >> num2;
+    if (num1 > num2){
+        cout << "Numero 1 é maior" << endl;
+    }
+    else{
+        cout << "Numero 2 é maior" << endl;
+    }
 }
