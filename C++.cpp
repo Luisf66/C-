@@ -4,16 +4,14 @@ using namespace std;
 
 
 int main(){
-    float num1,num2,maior;
+    float num1;
 
     cout << "Numero 1: " << endl;
     cin >> num1;
-    cout << "Numero 2: " << endl;
-    cin >> num2;
-    if (num1 > num2){
-        cout << "Numero 1 é maior" << endl;
+    if (num1 >= 0){
+        cout << "Positivo" << endl; 
     }
     else{
-        cout << "Numero 2 é maior" << endl;
+        cout << "Negativo" << endl; 
     }
 }
