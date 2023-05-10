@@ -5,22 +5,36 @@ using namespace std;
 
 
 int main(){
-    float nota1,nota2,media;
+    float num1,num2,num3;
 
-    cout << "Nota 1:" << endl;
-    cin >> nota1;
-    cout << "Nota 2:" << endl;
-    cin >> nota2;
-    media = (nota1 + nota2) / 2;
-    cout << "Media:" << media << endl;
-    if (media == 10){
-        cout << "Aprovado com Distincao: " << endl;
+    cout << "Numero 1:" << endl;
+    cin >> num1;
+    cout << "Numero 2:" << endl;
+    cin >> num2;
+    cout << "Numero 3:" << endl;
+    cin >> num3;
+    if (num1 > num2 && num2 > num3){
+        cout << "Numero 1 maior " << endl;
+        cout << "Numero 3 menor " << endl;
     }
-    else if(media > 7){
-        cout << "Aprovado: " <<  endl;
+    else if(num2 > num1 && num1 > num3){
+        cout << "Numero 2 maior " << endl;
+        cout << "Numero 3 menor " << endl;
     }
-    else{
-        cout << "Reprovado: " << endl;
+    else if(num3 > num1 && num1 > num2){
+        cout << "Numero 3 maior " << endl;
+        cout << "Numero 2 menor " << endl;
     }
-    
+    else if(num1 > num3 && num3 > num2){
+        cout << "Numero 1 maior " << endl;
+        cout << "Numero 2 menor " << endl;
+    }
+    else if(num2 > num3 && num3 > num1){
+        cout << "Numero 2 maior " << endl;
+        cout << "Numero 1 menor " << endl;
+    }
+    else if(num3 > num2 && num2 > num1){
+        cout << "Numero 3 maior " << endl;
+        cout << "Numero 1 menor " << endl;
+    }
 }
