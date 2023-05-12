@@ -4,16 +4,28 @@
 using namespace std;
 
 int main(){
-    int num;
-    string dias[] = {"INVÁLIDO","Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
+    int num1,num2,num3;
 
-    for (int i = 0; i < 7; i++){
-        cout << "Digite um numero: " << endl;
-        cin >> num;
-        if (num > 7){
-            cout << "Dia: INVÁLIDO" << endl;
+    cout << "Digite o primeiro valor: " << endl;
+    cin >> num1;
+    cout << "Digite o segundo valor: " << endl;
+    cin >> num2;
+    cout << "Digite o terceiro valor: " << endl;
+    cin >> num3;
+
+    if ((num1 + num2) > num3 || (num1 + num3) > num2 || (num2 + num3) > num1){
+        cout << "TRIÂNGULO" << endl;
+        if(num1 == num2 && num2 == num3){
+            cout << "EQUILÁTERO" << endl;
         }
-        cout << "Dia: " << dias[num] << endl;
+        else if(num1 == num2 || num1 == num3 || num2 == num3){
+            cout << "ISÓCILES" << endl;
+        }
+        else if(num1 != num2 && num1 != num3 && num2 != num3){
+            cout << "ESCALENO" << endl;
+        }
     }
-    
+    else{
+        cout << "NÃO É TRIÂNGULO" << endl;
+    }
 }
