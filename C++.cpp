@@ -4,15 +4,22 @@
 using namespace std;
 
 int main(){
-    int num,dezena,centena,milhar;
+    int valor,nota1,nota5,nota10,nota50,nota100;
 
-    cout << "Numero: " << endl;
-    cin >> num;
+    cout << "VALOR: " << endl;
+    cin >> valor;
 
-    dezena = num / 10;
-    cout << "DEZENAS: " << dezena << endl;
-    centena = num / 100;
-    cout << "CENTENAS: " << centena << endl;
-    milhar = num / 1000;
-    cout << "MILHARES: " << milhar << endl;
+    nota1 = valor / 1;
+    nota5 = valor / 5;
+    nota10 = valor / 10;
+    nota50 = valor / 50;
+    nota100 = valor / 100;
+
+    cout << "VALOR PARA NOTAS DE 1: " << nota1 << endl;
+    cout << "VALOR PARA NOTAS DE 5: " << nota5 << endl;
+    cout << "VALOR PARA NOTAS DE 10: " << nota10 << endl;
+    cout << "VALOR PARA NOTAS DE 50: " << nota50 << endl;
+    cout << "VALOR PARA NOTAS DE 100: " << nota100 << endl;
+
+
 }
