@@ -1,19 +1,30 @@
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
 
 int main(){
-    int ano;
+    int dia,mes,ano;
 
-    cout << "Digite o ano: " << endl;
+    cout << "Dia: " << endl;
+    cin >> dia;
+    if (dia < 0 || dia > 31){
+        cout << "DIA INVALIDO" << endl;
+        exit(0);
+    }
+    cout << "Mes: " << endl;
+    cin >> mes;
+    if (mes < 0 || mes > 12){
+        cout << "MES INVALIDO" << endl;
+        exit(0);
+    }
+    cout << "Ano: " << endl;
     cin >> ano;
+    if (ano < 0 || ano > 2050){
+        cout << "ANO INVALIDO" << endl;
+        exit(0);
+    }
 
-    if ((ano % 4 == 0) && (ano % 100 != 0) || (ano % 400 == 0)){
-        cout << "BISSEXTO" << endl;
-    }
-    else{
-        cout << "NORMAL" << endl;
-    }
+    
+
 }
