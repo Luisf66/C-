@@ -1,18 +1,19 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
 int main(){
-    int valor;
+    float valor;
 
     cout << "VALOR: " << endl;
     cin >> valor;
 
-    if (valor % 2 == 0){
-        cout << "PAR" << endl;
+    if (floor(valor) == valor){
+        cout << "INTEIRO" << endl;
     }
-    else{
-        cout << "IMPAR" << endl;
+    else {
+        cout << "DECIMAL" << endl;
     }
 }
