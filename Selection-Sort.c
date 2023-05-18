@@ -3,7 +3,6 @@
 #include <time.h>
 #include <windows.h>
 
-
 void shuffleArray(int arr[], int n) {
     srand(time(NULL));
     for (int i = n - 1; i > 0; i--) {
@@ -41,27 +40,43 @@ int main() {
     double elapsed_time;
 
     QueryPerformanceFrequency(&frequency);
-    QueryPerformanceCounter(&start);
 
     int n = 3000;
     int arr[3000];
     for (int i = 0; i < 3000; i++) {
         arr[i] = i;
     }
-    
-    shuffleArray(arr, 3000);
 
-    int vetor[n];
-    for (int i = 0; i < n; i++) {
-        vetor[i] = arr[i];
+    int repetitions;
+    printf("Digite o número de repetições desejado: ");
+    scanf("%d", &repetitions);
+
+    FILE *file = fopen("tempos_execucao.txt", "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
     }
 
-    selectionSort(vetor, n);
-    QueryPerformanceCounter(&end);
+    for (int i = 0; i < repetitions; i++) {
+        shuffleArray(arr, 3000);
 
-    elapsed_time = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+        int vetor[n];
+        for (int j = 0; j < n; j++) {
+            vetor[j] = arr[j];
+        }
 
-    printf("Tempo de execução: %.6f segundos\n", elapsed_time);
+        QueryPerformanceCounter(&start);
+        selectionSort(vetor, n);
+        QueryPerformanceCounter(&end);
+
+        elapsed_time = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+
+        fprintf(file, "%.6f\n", elapsed_time);
+    }
+
+    fclose(file);
+
+    printf("Valores do elapsed_time foram salvos no arquivo tempos_execucao.txt.\n");
 
     return 0;
 }
