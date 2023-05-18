@@ -37,18 +37,13 @@ void printArray(int arr[], int n) {
 }
 
 int main() {
-
     LARGE_INTEGER start, end, frequency;
     double elapsed_time;
 
-    // Obter a frequência do contador de desempenho
     QueryPerformanceFrequency(&frequency);
-
-    // Iniciar a contagem do tempo
     QueryPerformanceCounter(&start);
 
     int n = 3000;
-    
     int arr[3000];
     for (int i = 0; i < 3000; i++) {
         arr[i] = i;
@@ -61,20 +56,12 @@ int main() {
         vetor[i] = arr[i];
     }
 
-    //printf("Vetor original: ");
-    //printArray(vetor, n);
-
     selectionSort(vetor, n);
-
     QueryPerformanceCounter(&end);
 
-    // Calcular o tempo decorrido em segundos
     elapsed_time = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
 
     printf("Tempo de execução: %.6f segundos\n", elapsed_time);
-
-    //printf("Vetor ordenado: ");
-    //printArray(vetor, n);
 
     return 0;
 }
