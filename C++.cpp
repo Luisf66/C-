@@ -5,34 +5,37 @@
 using namespace std;
 
 int main(){
-    float alcool = 1.9;
-    float gasolina = 2.5;
-    float quantidade,valortotal = 0;
-    char resposta;
+    float quantidade_morango,quantidade_maca;
+    float valor_morango,valor_maca;
 
-    cout << "Digite o tipo de combustivel: " << endl;
-    cin >> resposta;
+    cout << "Quantidade de Morangos em Kg: " << endl;
+    cin >> quantidade_morango;
 
-    cout << "Digite a quantidade de combustivel: " << endl;
-    cin >> quantidade;
+    cout << "Quantidade de Maca em Kg: " << endl;
+    cin >> quantidade_maca;
 
-    if (resposta == 'A'){
-        valortotal = quantidade * alcool;
-        if (quantidade < 20){
-            valortotal = valortotal - ((valortotal * 3) / 100);
-        }
-        else{
-            valortotal = valortotal - ((valortotal * 5) / 100);
-        }
+    if (quantidade_morango > 5)
+    {
+        valor_morango = quantidade_morango * 2.2;
     }
-    else if (resposta == 'G'){
-        valortotal = quantidade * gasolina;
-        if (quantidade < 20){
-            valortotal = valortotal - ((valortotal * 4) / 100);
-        }
-        else{
-            valortotal = valortotal - ((valortotal * 6) / 100);
-        }
+    else
+    {
+        valor_morango = quantidade_morango * 2.5;
     }
-    cout << "Valor Total: " << valortotal << endl;
+
+    if (quantidade_maca > 5)
+    {
+        valor_maca = quantidade_maca * 1.5;
+    }
+    else
+    {
+        valor_maca = quantidade_maca * 1.8;
+    }
+
+    if ((quantidade_maca + quantidade_morango) > 8 || (valor_maca + valor_morango) > 25)
+    {
+        valor_maca = valor_maca - ((valor_maca * 10) / 100);
+        valor_morango = valor_morango - ((valor_morango * 10) / 100);
+        cout << "Valor Total: " << valor_morango + valor_maca << endl;
+    }
 }
