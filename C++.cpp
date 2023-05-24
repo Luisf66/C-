@@ -5,27 +5,34 @@
 using namespace std;
 
 int main(){
-    string pergunta[] = {"Telefonou para a vítima?","Esteve no local do crime?","Mora perto da vítima?","Devia para a vítima?","Já trabalhou com a vítima?"};
-    int soma = 0;
-    for (int i = 0; i < 5; i++){
-        int resposta = 0;
-        cout << pergunta[i] << endl;
-        cout << "Resposta: " << endl;
-        cin >> resposta;
-        soma += resposta ;
-    }
-    cout << "Soma das respostas: " << soma << endl;
-    if (soma == 2){
-        cout << "Suspeito" << endl;
-    }
-    else if (soma == 3 || soma == 4){
-        cout << "Cumplice" << endl;
-    }
-    else if (soma == 5){
-        cout << "Assassino" << endl;
-    }
-    else{
-        cout << "Inocente" << endl;
-    }
+    float alcool = 1.9;
+    float gasolina = 2.5;
+    float quantidade,valortotal = 0;
+    char resposta;
 
+    cout << "Digite o tipo de combustivel: " << endl;
+    cin >> resposta;
+
+    cout << "Digite a quantidade de combustivel: " << endl;
+    cin >> quantidade;
+
+    if (resposta == 'A'){
+        valortotal = quantidade * alcool;
+        if (quantidade < 20){
+            valortotal = valortotal - ((valortotal * 3) / 100);
+        }
+        else{
+            valortotal = valortotal - ((valortotal * 5) / 100);
+        }
+    }
+    else if (resposta == 'G'){
+        valortotal = quantidade * gasolina;
+        if (quantidade < 20){
+            valortotal = valortotal - ((valortotal * 4) / 100);
+        }
+        else{
+            valortotal = valortotal - ((valortotal * 6) / 100);
+        }
+    }
+    cout << "Valor Total: " << valortotal << endl;
 }
