@@ -4,15 +4,18 @@
 
 using namespace std;
 
-/*Faça um programa que peça uma nota, entre zero e dez
-Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido.*/
-
 int main()
 {
-    int num;
-    do
+    string nome,senha;
+    do{
+    cout << "Digite seu nome: " << endl;
+    cin >> nome;
+    cout << "Digite sua senha: " << endl;
+    cin >> senha;
+    if (senha == nome)
     {
-    cout << "Insira um numero entre 0 e 10: " << endl;
-    cin >> num;
-    } while (num < 0 || num > 10);
+        cout << "O nome não deve ser igual a senha" << endl;
+    }
+    } while (nome == senha);
+
 }
