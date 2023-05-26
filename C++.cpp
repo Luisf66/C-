@@ -6,16 +6,33 @@ using namespace std;
 
 int main()
 {
-    string nome,senha;
-    do{
-    cout << "Digite seu nome: " << endl;
-    cin >> nome;
-    cout << "Digite sua senha: " << endl;
-    cin >> senha;
-    if (senha == nome)
+    string nome;
+    int tamanho,idade,salario;
+    char sexo,ec;
+    do
     {
-        cout << "O nome não deve ser igual a senha" << endl;
-    }
-    } while (nome == senha);
-
+        cout << "Digite seu nome: " << endl;
+        cin >> nome;
+        tamanho = nome.length();
+    } while (tamanho < 3);
+    do
+    {
+        cout << "Digite sua idade: " << endl;
+        cin >> idade;
+    } while (idade < 0 || idade > 150);
+    do
+    {
+    cout << "Digite seu salario: " << endl;
+    cin >> salario;
+    } while (salario < 0);
+    do
+    {
+        cout << "Digite seu sexo f ou m: " << endl;
+    cin >> sexo;
+    } while (sexo != 'f' && sexo != 'm');
+    do
+    {
+    cout << "Digite seu estado civil s|c|v|d: " << endl;
+    cin >> ec;
+    } while (ec != 's' && ec != 'c' && ec != 'v' && ec != 'd');
 }
