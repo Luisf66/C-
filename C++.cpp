@@ -6,8 +6,19 @@ using namespace std;
 
 int main()
 {   
-    for (int i = 1; i < 21; i++)
+    int num[5] = {};
+    for (int i = 1; i < 6; i++)
     {
-        cout << i << " ";
+        cout << "Numero " << i << ": "<< endl;
+        cin >> num[i];
+        int max = 0;
+        for (int i = 1; i < 5; i++)
+        {
+            if (num[i] > max)
+            {
+                max = num[i];
+            }
+        }
+        cout << "Maior numero: " << max << endl;
     }
 }
