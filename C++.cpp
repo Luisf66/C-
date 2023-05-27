@@ -6,14 +6,17 @@ using namespace std;
 
 int main()
 {   
-    int num1 = 0;
+    int num1,num2,resultado = 1;
 
     cout << "Numero 1: " << endl;
     cin >> num1;
+    cout << "Numero 2: " << endl;
+    cin >> num2;
 
-    for (int i = 0; i < 11; i++)
+    for (int i = 1; i <= num2; i++)
     {
-        cout << num1 << "X" << i << "=";
-        cout << i * num1 << endl;
+
+        resultado *= num1;
+        cout << resultado << endl;
     }
 }
