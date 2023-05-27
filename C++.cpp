@@ -9,13 +9,13 @@ int main()
     float anos,popA,popB,taxaA,taxaB;
 
     cout << "Populacao da cidade A: " << endl;
-    cin >> popA;
+    scanf("%f", &popA);
     cout << "Populacao da cidade B: " << endl;
-    cin >> popB;
+    scanf("%f", &popB);
     cout << "Taxa de crescimento A: " << endl;
-    cin >> taxaA;
+    scanf("%f", &taxaA);
     cout << "Taxa de crescimento B: " << endl;
-    cin >> taxaB;
+    scanf("%f", &taxaB);
     while (popA < popB)
     {
         popA = popA + (popA * taxaA) / 100; 
