@@ -6,19 +6,16 @@ using namespace std;
 
 int main()
 {   
+    float media;
+    int soma = 0;
     int num[5] = {};
-    for (int i = 1; i < 6; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << "Numero " << i << ": "<< endl;
         cin >> num[i];
-        int max = 0;
-        for (int i = 1; i < 5; i++)
-        {
-            if (num[i] > max)
-            {
-                max = num[i];
-            }
-        }
-        cout << "Maior numero: " << max << endl;
+        soma = soma + num[i];
+        cout << "Soma: " << soma;
     }
+    media = soma / 5;
+    cout << "Media: " << media;
 }
