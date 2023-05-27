@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {   
-    int num1,num2;
+    int num1,num2,soma = 0;
 
     cout << "Numero 1: " << endl;
     cin >> num1;
@@ -16,5 +16,7 @@ int main()
     for (int i = num1 + 1; i < num2; i++)
     {
         cout << i << endl;
+        soma = soma + i;
+        cout << "Soma: " << soma << endl;
     }
 }
