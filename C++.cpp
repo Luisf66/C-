@@ -6,14 +6,20 @@ using namespace std;
 
 int main()
 {
-    int popA = 80000;
-    int popB = 200000;
-    float anos;
+    float anos,popA,popB,taxaA,taxaB;
 
+    cout << "Populacao da cidade A: " << endl;
+    cin >> popA;
+    cout << "Populacao da cidade B: " << endl;
+    cin >> popB;
+    cout << "Taxa de crescimento A: " << endl;
+    cin >> taxaA;
+    cout << "Taxa de crescimento B: " << endl;
+    cin >> taxaB;
     while (popA < popB)
     {
-        popA = popA + (popA * 3) / 100; 
-        popB = popB + (popA * 1.5) / 100;
+        popA = popA + (popA * taxaA) / 100; 
+        popB = popB + (popB * taxaB) / 100;
         anos ++;
     }
     cout << "Anos: " << anos << endl;
