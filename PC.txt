@@ -1,0 +1,13 @@
+Componentes Do PC
+Processador: Ryzen 5 5600G
+Placa de video: RX 6600
+RAM: 4x 8GB
+Placa mae: GIGABYTE B450M
+Armazenamento: Nvme 500GB + SSD 500GB
+Fonte: 700W
+Monitor: -
+Teclado: -
+Mouse: -
+Gabinete: -
+Sistema Operacional: WINDOWNS
+Valor: 3500
