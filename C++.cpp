@@ -3,147 +3,205 @@
 #include <fstream>
 
 using namespace std;
-
-   class PC
-   {
-        //ATRIBUTOS
+    class componente 
+    {
         private:
-        string processador;
-        string placa_de_video;
-        string ram;
-        string placa_mae; 
-        string armazenamento;
-        string fonte;
-        string monitor;
-        string teclado;
-        string mouse;
-        string gabinete;
-        string SO;
+        string tipo;
+        string modelo;
         string valor;
-        //MÉTODOS
         public:
-        PC () 
+        void define_tipo ()
         {
-            cout << "Preencha abaixo os campos com as especificações do seu PC: " << endl;
+            cout << "Tipo de componente: " << endl;
+            getline(cin,tipo);
         }
-        void define_processador ()
+        void define_modelo ()
         {
-            cout << "Qual processador você deseja utilizar: " << endl;
-            getline(cin,processador);
-        }
-        void define_placa_de_video ()
-        {
-            cout << "Qual placa de video você deseja utilizar: " << endl;
-            getline(cin,placa_de_video);
-        }
-        void define_ram ()
-        {
-            cout << "Qual memoria RAM você deseja utilizar: " << endl;
-            getline(cin,ram);
-        }
-        void define_placa_mae ()
-        {
-            cout << "Qual placa mae você deseja utilizar: " << endl;
-            getline(cin,placa_mae);
-        }
-        void define_armazenamento ()
-        {
-            cout << "Qual armazenamento você deseja utilizar: " << endl;
-            getline(cin,armazenamento);
-        }
-        void define_fonte ()
-        {
-            cout << "Qual fonte você deseja utilizar: " << endl;
-            getline(cin,fonte);
-        }
-        void define_monitor ()
-        {
-            cout << "Qual monitor você deseja utilizar: " << endl;
-            getline(cin,monitor);
-        }
-        void define_teclado ()
-        {
-            cout << "Qual teclado você deseja utilizar: " << endl;
-            getline(cin,teclado);
-        }
-        void define_mouse ()
-        {
-            cout << "Qual mouse você deseja utilizar: " << endl;
-            getline(cin,mouse);
-        }
-        void define_gabinete ()
-        {
-            cout << "Qual gabinete você deseja utilizar: " << endl;
-            getline(cin,gabinete);
-        }
-        void define_SO ()
-        {
-            cout << "Qual SO você deseja utilizar: " << endl;
-            getline(cin,SO);
+            cout << "Modelo do componente: " << endl;
+            getline(cin,modelo);
         }
         void define_valor ()
         {
-            cout << "Valor gasto: " << endl;
+            cout << "Valor do componente: " << endl;
             getline(cin,valor);
-        }
-        void exibir ()
+        } 
+        void salvar_dados(ofstream& arquivo)
         {
-            cout << "Processador: " << processador << endl;
-            cout << "Placa de video: " << placa_de_video << endl;
-            cout << "RAM: " << ram << endl;
-            cout << "Placa mae: " << placa_mae << endl;
-            cout << "Armazenamento: " << armazenamento << endl;
-            cout << "Fonte: " << fonte << endl;
-            cout << "Monitor: " << monitor << endl;
-            cout << "Teclado: " << teclado << endl;
-            cout << "Mouse: " << mouse << endl;
-            cout << "Gabinete: " << gabinete << endl;
-            cout << "Sistema Operacional: " << SO << endl;
-            cout << "Valor: " << valor << endl;
-
-        }
-        void salvar ()
-        {
-            ofstream especificacoes("PC.txt");
-            if (especificacoes.is_open())
-            {
-                especificacoes << "Componentes Do PC" << endl;
-                especificacoes << "Processador: " << processador << endl;
-                especificacoes << "Placa de video: " << placa_de_video << endl;
-                especificacoes << "RAM: " << ram << endl;
-                especificacoes << "Placa mae: " << placa_mae << endl;
-                especificacoes << "Armazenamento: " << armazenamento << endl;
-                especificacoes << "Fonte: " << fonte << endl;
-                especificacoes << "Monitor: " << monitor << endl;
-                especificacoes << "Teclado: " << teclado << endl;
-                especificacoes << "Mouse: " << mouse << endl;
-                especificacoes << "Gabinete: " << gabinete << endl;
-                especificacoes << "Sistema Operacional: " << SO << endl;
-                especificacoes << "Valor: " << valor << endl;
-                especificacoes.close();
-            }
-            else
-            {
-                cout << "Dados não cadastrados..." << endl;
-            }
+        arquivo << "Tipo: " << tipo << endl;
+        arquivo << "Modelo: " << modelo << endl;
+        arquivo << "Valor: " << valor << endl;
+        arquivo << endl;
         }
     };
 
+    class Processador : public componente
+    {
+        public:
+        Processador (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações da CPU: " << endl;
+            cout << "----------------------" << endl;
+        }
+    };
+
+    class Placa_de_video : public componente
+    {
+        public:
+        Placa_de_video (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações da GPU: " << endl;
+            cout << "----------------------" << endl;
+        }
+    };
+
+    class Ram : public componente
+    {
+        public:
+        Ram (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações da RAM: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Placa_mae : public componente
+    {
+        public:
+        Placa_mae (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações da placa mãe: " << endl;
+            cout << "----------------------" << endl;
+        }
+    };
+
+    class Armazenamento : public componente
+    {
+        public:
+        Armazenamento (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do armazenamento: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Fonte : public componente
+    {
+        public:
+        Fonte (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações da fonte: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Monitor : public componente
+    {
+        public:
+        Monitor (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do monitor: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Teclado : public componente
+    {
+        public:
+        Teclado (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do teclado: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Mouse : public componente
+    {
+        public:
+        Mouse (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do mouse: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class Gabinete : public componente
+    {
+        public:
+        Gabinete (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do gabinete: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
+    class SO : public componente
+    {
+        public:
+        SO (): componente() {
+            cout << "----------------------" << endl;
+            cout << "Informações do Sistema Operacional: " << endl;
+            cout << "----------------------" << endl;
+        }};
+
 int main()
 {   
-    PC meuPC;
+    ////////////////////////
+    Processador processador;
+    processador.define_modelo();
+    processador.define_tipo();
+    processador.define_valor();
+    ////////////////////////
+    Placa_de_video placa_de_video;
+    placa_de_video.define_modelo();
+    placa_de_video.define_tipo();
+    placa_de_video.define_valor();
+    ////////////////////////
+    Ram ram;
+    ram.define_modelo();
+    ram.define_tipo();
+    ram.define_valor();
+    ////////////////////////
+    Armazenamento armazenamento;
+    armazenamento.define_modelo();
+    armazenamento.define_tipo();
+    armazenamento.define_valor();
+    ////////////////////////
+    Fonte fonte;
+    fonte.define_modelo();
+    fonte.define_tipo();
+    fonte.define_valor();
+    ////////////////////////
+    Monitor monitor;
+    monitor.define_modelo();
+    monitor.define_tipo();
+    monitor.define_valor();
+    ////////////////////////
+    Teclado teclado;
+    teclado.define_modelo();
+    teclado.define_tipo();
+    teclado.define_valor();
+    ////////////////////////
+    Mouse mouse;
+    mouse.define_modelo();
+    mouse.define_tipo();
+    mouse.define_valor();
+    ////////////////////////
+    Gabinete gabinete;
+    gabinete.define_modelo();
+    gabinete.define_tipo();
+    gabinete.define_valor();
+    ////////////////////////
+    SO so;
+    so.define_modelo();
+    so.define_tipo();
+    so.define_valor();
+    ////////////////////////
+    ofstream arquivo("PC.txt");
+    if (arquivo.is_open()) {
+        processador.salvar_dados(arquivo);
+        placa_de_video.salvar_dados(arquivo);
+        ram.salvar_dados(arquivo);
+        armazenamento.salvar_dados(arquivo);
+        fonte.salvar_dados(arquivo);
+        monitor.salvar_dados(arquivo);
+        teclado.salvar_dados(arquivo);
+        mouse.salvar_dados(arquivo);
+        gabinete.salvar_dados(arquivo);
+        so.salvar_dados(arquivo);
 
-    meuPC.define_processador();
-    meuPC.define_placa_de_video();
-    meuPC.define_ram();
-    meuPC.define_placa_mae();
-    meuPC.define_armazenamento();
-    meuPC.define_fonte();
-    meuPC.define_monitor();
-    meuPC.define_teclado();
-    meuPC.define_mouse();
-    meuPC.define_gabinete();
-    meuPC.define_SO();
-    meuPC.define_valor();
-    meuPC.salvar();
+        arquivo.close();
+};
 }
