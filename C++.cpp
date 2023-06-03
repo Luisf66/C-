@@ -154,6 +154,11 @@ int main()
     ram.define_tipo();
     ram.define_valor();
     ////////////////////////
+    Placa_mae placa_mae;
+    placa_mae.define_modelo();
+    placa_mae.define_tipo();
+    placa_mae.define_valor();
+    ////////////////////////
     Armazenamento armazenamento;
     armazenamento.define_modelo();
     armazenamento.define_tipo();
@@ -194,6 +199,7 @@ int main()
         processador.salvar_dados(arquivo);
         placa_de_video.salvar_dados(arquivo);
         ram.salvar_dados(arquivo);
+        placa_mae.salvar_dados(arquivo);
         armazenamento.salvar_dados(arquivo);
         fonte.salvar_dados(arquivo);
         monitor.salvar_dados(arquivo);
