@@ -10,22 +10,16 @@ using namespace std;
         string modelo;
         double valor;
         public:
-        void define_tipo ()
+        void definir ()
         {
             cout << "Tipo de componente: " << endl;
             getline(cin,tipo);
-        }
-        void define_modelo ()
-        {
             cout << "Modelo do componente: " << endl;
             getline(cin,modelo);
-        }
-        void define_valor ()
-        {
             cout << "Valor do componente: " << endl;
             cin >> valor;
             cin.ignore();
-        } 
+        }
         void salvar_dados(ofstream& arquivo)
         {
         arquivo << "Tipo: " << tipo << endl;

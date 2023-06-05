@@ -22,70 +22,48 @@ double somar_saldos()
             saldo_total = saldo_total + saldo_mensal;
         }
     }
-    cout << "Saldo total: " << saldo_total << endl;
+    cout << "Seu PC irá custar: " << saldo_total << endl;
     arquivo.close();
     return saldo_mensal;
 }
 
 int main()
-{   /*
+{   
     ////////////////////////
     Processador processador;
-    processador.define_modelo();
-    processador.define_tipo();
-    processador.define_valor();
+    processador.definir();
     ////////////////////////
     Placa_de_video placa_de_video;
-    placa_de_video.define_modelo();
-    placa_de_video.define_tipo();
-    placa_de_video.define_valor();
+    placa_de_video.definir();
     ////////////////////////
     Ram ram;
-    ram.define_modelo();
-    ram.define_tipo();
-    ram.define_valor();
+    ram.definir();
     ////////////////////////
     Placa_mae placa_mae;
-    placa_mae.define_modelo();
-    placa_mae.define_tipo();
-    placa_mae.define_valor();
+    placa_mae.definir();
     ////////////////////////
     Armazenamento armazenamento;
-    armazenamento.define_modelo();
-    armazenamento.define_tipo();
-    armazenamento.define_valor();
+    armazenamento.definir();
     ////////////////////////
     Fonte fonte;
-    fonte.define_modelo();
-    fonte.define_tipo();
-    fonte.define_valor();
+    fonte.definir();
     ////////////////////////
     Monitor monitor;
-    monitor.define_modelo();
-    monitor.define_tipo();
-    monitor.define_valor();
+    monitor.definir();
     ////////////////////////
     Teclado teclado;
-    teclado.define_modelo();
-    teclado.define_tipo();
-    teclado.define_valor();
+    teclado.definir();
     ////////////////////////
     Mouse mouse;
-    mouse.define_modelo();
-    mouse.define_tipo();
-    mouse.define_valor();
+    mouse.definir();
     ////////////////////////
     Gabinete gabinete;
-    gabinete.define_modelo();
-    gabinete.define_tipo();
-    gabinete.define_valor();
+    gabinete.definir();
     ////////////////////////
     SO so;
-    so.define_modelo();
-    so.define_tipo();
-    so.define_valor();
+    so.definir();
     ////////////////////////
-    ofstream arquivo("PC.txt");
+    ofstream arquivo("PC2.txt");
     if (arquivo.is_open())
     {
         processador.salvar_dados(arquivo);
@@ -99,8 +77,8 @@ int main()
         mouse.salvar_dados(arquivo);
         gabinete.salvar_dados(arquivo);
         so.salvar_dados(arquivo);
-
         arquivo.close();
-    };*/
+    };
+    
     somar_saldos();
 }
