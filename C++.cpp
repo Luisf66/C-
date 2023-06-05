@@ -3,8 +3,32 @@
 #include <fstream>
 #include "classes.h"
 
+//ADICIONAR:
+//ESCOLHER CAMPOS
+//EDITAR 
+
+
+double somar_saldos()
+{
+    string linha;
+    ifstream arquivo("PC.txt");
+    double saldo_mensal, saldo_total = 0;
+    while (getline(arquivo, linha))
+    {
+        if (linha.find("Valor: ") != string::npos)
+        {
+            int pos = linha.find(":") + 1;
+            saldo_mensal = stod(linha.substr(pos));
+            saldo_total = saldo_total + saldo_mensal;
+        }
+    }
+    cout << "Saldo total: " << saldo_total << endl;
+    arquivo.close();
+    return saldo_mensal;
+}
+
 int main()
-{   
+{   /*
     ////////////////////////
     Processador processador;
     processador.define_modelo();
@@ -62,7 +86,8 @@ int main()
     so.define_valor();
     ////////////////////////
     ofstream arquivo("PC.txt");
-    if (arquivo.is_open()) {
+    if (arquivo.is_open())
+    {
         processador.salvar_dados(arquivo);
         placa_de_video.salvar_dados(arquivo);
         ram.salvar_dados(arquivo);
@@ -76,5 +101,6 @@ int main()
         so.salvar_dados(arquivo);
 
         arquivo.close();
-};
+    };*/
+    somar_saldos();
 }

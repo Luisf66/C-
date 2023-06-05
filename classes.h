@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#ifndef classes.h
-#define classes.h
 
 using namespace std;
     class componente 
@@ -10,7 +8,7 @@ using namespace std;
         private:
         string tipo;
         string modelo;
-        string valor;
+        double valor;
         public:
         void define_tipo ()
         {
@@ -25,7 +23,8 @@ using namespace std;
         void define_valor ()
         {
             cout << "Valor do componente: " << endl;
-            getline(cin,valor);
+            cin >> valor;
+            cin.ignore();
         } 
         void salvar_dados(ofstream& arquivo)
         {
@@ -137,5 +136,3 @@ using namespace std;
             cout << "Informações do Sistema Operacional: " << endl;
             cout << "----------------------" << endl;
         }};
-        
-#endif
