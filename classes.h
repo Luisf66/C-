@@ -29,104 +29,24 @@ using namespace std;
         }
     };
 
-    class Processador : public componente
-    {
-        public:
-        Processador (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações da CPU: " << endl;
-            cout << "----------------------" << endl;
-        }
-    };
+    class Processador : public componente{};
 
-    class Placa_de_video : public componente
-    {
-        public:
-        Placa_de_video (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações da GPU: " << endl;
-            cout << "----------------------" << endl;
-        }
-    };
+    class Placa_de_video : public componente{};
 
-    class Ram : public componente
-    {
-        public:
-        Ram (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações da RAM: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Ram : public componente{};
 
-    class Placa_mae : public componente
-    {
-        public:
-        Placa_mae (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações da placa mãe: " << endl;
-            cout << "----------------------" << endl;
-        }
-    };
+    class Placa_mae : public componente{};
 
-    class Armazenamento : public componente
-    {
-        public:
-        Armazenamento (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do armazenamento: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Armazenamento : public componente{};
 
-    class Fonte : public componente
-    {
-        public:
-        Fonte (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações da fonte: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Fonte : public componente{};
 
-    class Monitor : public componente
-    {
-        public:
-        Monitor (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do monitor: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Monitor : public componente{};
 
-    class Teclado : public componente
-    {
-        public:
-        Teclado (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do teclado: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Teclado : public componente{};
 
-    class Mouse : public componente
-    {
-        public:
-        Mouse (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do mouse: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Mouse : public componente{};
 
-    class Gabinete : public componente
-    {
-        public:
-        Gabinete (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do gabinete: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class Gabinete : public componente{};
 
-    class SO : public componente
-    {
-        public:
-        SO (): componente() {
-            cout << "----------------------" << endl;
-            cout << "Informações do Sistema Operacional: " << endl;
-            cout << "----------------------" << endl;
-        }};
+    class SO : public componente{};

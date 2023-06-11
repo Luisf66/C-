@@ -12,10 +12,6 @@
 
 void tela ()
 {
-    int opcao = 1;
-    int* lista_de_componentes = new int[11];
-    int i = 0;
-
     cout << "----------------------------" << endl;
     cout << "|-| 1-Processador        |-|" << endl;
     cout << "|-| 2-Placa de video     |-|" << endl;
@@ -29,20 +25,101 @@ void tela ()
     cout << "|-| 10-Gabinete          |-|" << endl;
     cout << "|-| 11-SO                |-|" << endl;
     cout << "----------------------------" << endl;
-    do 
-    {
-        cout << "Digite o componente a ser adiconado: " << endl;
-        cin >> opcao;
-        lista_de_componentes[i] = opcao;
-        i++;
+}
 
-    } while (opcao != 0);
-
-    for (int a = 0; a < i-1; a++)
+void escolha ()
+{   
+    Processador processador;
+    Placa_de_video placa_de_video;
+    Ram ram;
+    Placa_mae placa_mae;
+    Armazenamento armazenamento;
+    Fonte fonte;
+    Monitor monitor;
+    Teclado teclado;
+    Mouse mouse;
+    Gabinete gabinete;
+    SO so;
+    int opcao;
+    ofstream arquivo("PC.txt");
+    do
     {
-        cout << "Componentes da lista: " << lista_de_componentes[a] << endl;
+    cout << "O que você deseja adicionar: " << endl;
+    cin >> opcao;
+    cin.ignore();
+    
+    switch (opcao)
+    {
+    case 1:
+        processador.definir();
+        processador.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 2:
+        placa_de_video.definir();
+        placa_de_video.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 3:
+        ram.definir();
+        ram.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 4:
+        placa_mae.definir();
+        placa_mae.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 5:
+        armazenamento.definir();
+        armazenamento.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 6:
+        fonte.definir();
+        fonte.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 7:
+        monitor.definir();
+        monitor.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 8:
+        teclado.definir();
+        teclado.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 9:
+        mouse.definir();
+        mouse.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 10:
+        gabinete.definir();
+        gabinete.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+
+    case 11:
+        so.definir();
+        so.salvar_dados(arquivo);
+        arquivo.close();
+    break;
+    default:
+        cout << "Opção inválida" << endl;
+    break;
     }
-    delete[] lista_de_componentes;
+    } while (opcao != 0);
 }
 
 double somar_saldos()
@@ -66,59 +143,7 @@ double somar_saldos()
 
 int main()
 {   
-    /*
-    ////////////////////////
-    Processador processador;
-    processador.definir();
-    ////////////////////////
-    Placa_de_video placa_de_video;
-    placa_de_video.definir();
-    ////////////////////////
-    Ram ram;
-    ram.definir();
-    ////////////////////////
-    Placa_mae placa_mae;
-    placa_mae.definir();
-    ////////////////////////
-    Armazenamento armazenamento;
-    armazenamento.definir();
-    ////////////////////////
-    Fonte fonte;
-    fonte.definir();
-    ////////////////////////
-    Monitor monitor;
-    monitor.definir();
-    ////////////////////////
-    Teclado teclado;
-    teclado.definir();
-    ////////////////////////
-    Mouse mouse;
-    mouse.definir();
-    ////////////////////////
-    Gabinete gabinete;
-    gabinete.definir();
-    ////////////////////////
-    SO so;
-    so.definir();
-    ////////////////////////
-    ofstream arquivo("PC.txt");
-    if (arquivo.is_open())
-    {
-        processador.salvar_dados(arquivo);
-        placa_de_video.salvar_dados(arquivo);
-        ram.salvar_dados(arquivo);
-        placa_mae.salvar_dados(arquivo);
-        armazenamento.salvar_dados(arquivo);
-        fonte.salvar_dados(arquivo);
-        monitor.salvar_dados(arquivo);
-        teclado.salvar_dados(arquivo);
-        mouse.salvar_dados(arquivo);
-        gabinete.salvar_dados(arquivo);
-        so.salvar_dados(arquivo);
-        arquivo.close();
-    };
-    
+    tela();
+    escolha();
     somar_saldos();
-    */
-   tela();
 }
