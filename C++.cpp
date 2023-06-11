@@ -1,12 +1,49 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
+
 #include "classes.h"
 
 //ADICIONAR:
 //ESCOLHER CAMPOS
 //EDITAR 
 
+
+void tela ()
+{
+    int opcao = 1;
+    int* lista_de_componentes = new int[11];
+    int i = 0;
+
+    cout << "----------------------------" << endl;
+    cout << "|-| 1-Processador        |-|" << endl;
+    cout << "|-| 2-Placa de video     |-|" << endl;
+    cout << "|-| 3-Ram                |-|" << endl;
+    cout << "|-| 4-Placa mae          |-|" << endl;
+    cout << "|-| 5-Armazenamento      |-|" << endl;
+    cout << "|-| 6-Fonte              |-|" << endl;
+    cout << "|-| 7-Monitor            |-|" << endl;
+    cout << "|-| 8-Teclado            |-|" << endl;
+    cout << "|-| 9-Mouse              |-|" << endl;
+    cout << "|-| 10-Gabinete          |-|" << endl;
+    cout << "|-| 11-SO                |-|" << endl;
+    cout << "----------------------------" << endl;
+    do 
+    {
+        cout << "Digite o componente a ser adiconado: " << endl;
+        cin >> opcao;
+        lista_de_componentes[i] = opcao;
+        i++;
+
+    } while (opcao != 0);
+
+    for (int a = 0; a < i-1; a++)
+    {
+        cout << "Componentes da lista: " << lista_de_componentes[a] << endl;
+    }
+    delete[] lista_de_componentes;
+}
 
 double somar_saldos()
 {
@@ -29,6 +66,7 @@ double somar_saldos()
 
 int main()
 {   
+    /*
     ////////////////////////
     Processador processador;
     processador.definir();
@@ -63,7 +101,7 @@ int main()
     SO so;
     so.definir();
     ////////////////////////
-    ofstream arquivo("PC2.txt");
+    ofstream arquivo("PC.txt");
     if (arquivo.is_open())
     {
         processador.salvar_dados(arquivo);
@@ -81,4 +119,6 @@ int main()
     };
     
     somar_saldos();
+    */
+   tela();
 }
