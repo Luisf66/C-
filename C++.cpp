@@ -1,14 +1,18 @@
+// gcc -c -Wall SIG-CLINIC.c
+// gcc SIG-CLINIC.c -o SIG-CLINIC
+
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-int main() {
-    int raio = 0;
-    double volume = 0;
-    double pi = 3.14;
-
-    cout << "Valor do raio: " << endl;
-    cin >> raio;
-    volume = pi * pow(raio, 3) * 4 / 3;
-    cout << "Volume = " << volume << endl;
+int main()
+{
+    int numero = 0;
+    int resultado = 1;
+    cout << "Fatorial de: " << endl;
+    cin >> numero;
+    for (int i = numero; i > 0; i--)
+    {
+        resultado = resultado * i;
+    }
+    cout << "Resultado: " << resultado << endl;
 }
