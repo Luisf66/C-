@@ -1,15 +1,18 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int numero = 0;
-    int resultado = 1;
-    cout << "Fatorial de: " << endl;
-    cin >> numero;
-    for (int i = numero; i > 0; i--)
+    // uso de funções lambda
+    auto media = [](vector<double> numeros) -> double
     {
-        resultado = resultado * i;
-    }
-    cout << "Resultado: " << resultado << endl;
+        double somar = 0;
+
+        for (double i: numeros) {
+            somar += i;
+        }
+        return somar / numeros.size();
+    };
+
+    cout << "Média : " << media({7, 6.9, 9.1, 8.4, 3.1,9.2}) << endl;
 }
