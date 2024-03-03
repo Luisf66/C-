@@ -1,6 +1,3 @@
-// gcc -c -Wall SIG-CLINIC.c
-// gcc SIG-CLINIC.c -o SIG-CLINIC
-
 #include <iostream>
 using namespace std;
 
