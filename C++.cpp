@@ -1,14 +1,22 @@
 #include <bits/stdc++.h>
-#include "c++.h"
 using namespace std;
 
 int main()
 {
-    //modularização
-    double number_one = 9.8;
-    double number_two = 3.4;
-    
-    cout << soma(number_one, number_two);
+    //uso de classes
+    class Linguagem {
+        string nome;
+        int ano_lancamento;
 
-    cout << "\nFim do Programa" << endl;
+        public:
+        void mensagem(string name, int ano){
+            nome = name;
+            ano_lancamento = ano;
+            cout << "A linguagem " << nome << " foi criada em " << ano_lancamento << endl;
+        };
+    };
+
+    Linguagem cplus;
+    cplus.mensagem("C++", 1979);
+
 }
