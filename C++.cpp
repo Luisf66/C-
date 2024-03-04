@@ -3,16 +3,15 @@ using namespace std;
 
 int main()
 {
-    // uso de funções lambda
-    auto media = [](vector<double> numeros) -> double
-    {
-        double somar = 0;
+    //uso de ponteiros
 
-        for (double i: numeros) {
-            somar += i;
-        }
-        return somar / numeros.size();
-    };
+    int numero = 0;
+    cout << "Digite o número: " << endl;
+    cin >> numero;
+    cout << "O valor da variável guardado foi: " << numero << endl;
 
-    cout << "Média : " << media({7, 6.9, 9.1, 8.4, 3.1,9.2}) << endl;
+    int* apontador_numero;
+    apontador_numero = &numero;
+    cout << "O valor do apontador guardado foi: " << *(static_cast<int*>(apontador_numero)) << endl;
+    cout << "O valor do apontador é: " << apontador_numero << endl;
 }
