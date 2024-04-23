@@ -1,34 +1,21 @@
 #include <iostream>
 using namespace std;
 
-class Polimorfismo
-{
-public:
-    virtual void Dinamico()
-    {
-        cout << "Sou um método dinamico e posso ser sobrescrito" << endl;
-    }
-};
-
-class Sobrescreve : public Polimorfismo
-{
-public:
-    void Dinamico() override
-    {
-        cout << "Sobrescrevi o método Dinamico da classe Pai" << endl;
-    }
-};
+//PROTOTIPO
+    int fatorial(int num);
+//PROTOTIPO
 
 int main()
 {
-    Polimorfismo *poli;
-    Polimorfismo pai;
-    Sobrescreve sobre;
-
-    pai.Dinamico();
-
-    poli = &sobre;
-    poli->Dinamico();
-
+    int fat = 0;
+    fat = fatorial(3);
+    cout << fat << endl;
     return 0;
 }
+
+// FATORIAL
+int fatorial(int num) 
+{
+    return (num == 0) ?  1 :  num * fatorial(num - 1);  
+}
+// FATORIAL
