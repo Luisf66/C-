@@ -4,37 +4,58 @@ using namespace std;
 
 int main()
 {
-    int escolha = 0;      // variável para seleção das opções
-    stack<string> pratos; // pilha de prato
+    // Declaração de Variáveis
+    float saldo = 0;    // armazena o saldo do usuário
+    float operacao = 0; // armazena os valores para as operações
+    int opcao = 0;      // escolhe dentre as opções
     do
     {
-        cout << "Escolha entre:" << endl;
-        cout << "1- Adicionar Prato" << endl;
-        cout << "2- Remover Prato" << endl;
-        cout << "3- Ver tamanho da pilha" << endl;
-        cout << "4- Verificar pilha vazia" << endl;
-        cin >> escolha;
-
-        switch (escolha)
+        // Opções
+        cout << "Escolha uma opção abaixo" << endl;
+        cout << "1 - Depositar" << endl;
+        cout << "2 - Sacar" << endl;
+        cout << "3 - Ver Saldo " << endl;
+        cout << "4 - Finalizar" << endl;
+        cin >> opcao; // Requisição de uma opção
+        // Operações de cada opção
+        switch (opcao)
         {
-        case 1:
-            pratos.push("Prato Adicionado");
-            cout << "Prato Adicionado" << endl;
+        case 1: // realiza o deposito do valor na variável operacao
+            cout << "Seu Saldo é de: " << saldo << endl;
+            cout << "Digite o valor do deposito: " << endl;
+            cin >> operacao;
+            saldo = saldo + operacao;
+            cout << "Seu Saldo é de: " << saldo << endl;
+            cout << "Operação Finalizada" << endl;
             break;
-        case 2:
-            pratos.pop();
-            cout << "Prato Removido" << endl;
+        case 2: // realiza o saque do valor na variável operacao
+            cout << "Seu Saldo é de: " << saldo << endl;
+            cout << "Digite o valor do saque: " << endl;
+            cin >> operacao;
+            if (saldo > operacao) // verifica se há saldo disponível para transação
+            {
+                saldo = saldo - operacao;
+                cout << "Operação Bem Sucedida\n";
+            }
+            else
+            {
+                cout << "Operação Não Realizada...\n";
+                cout << "Saldo insulficiente\n";
+            }
+            cout << "Seu Saldo é de: " << saldo << endl;
+            cout << "Operação Finalizada" << endl;
             break;
-        case 3:
-            cout << "Tamanho da Pilha: ";
-            cout << pratos.size();
+        case 3: // mostra o valor de saldo
+            cout << "Seu Saldo é de: " << saldo << endl;
+            cout << "Operação Finalizada" << endl;
             break;
-        case 4:
-            !pratos.empty() ? cout << "Pilha com Prato\n" : cout << "Pilha vazia\n";
+        case 4: // encerra o programa
+            cout << "Operação Finalizada" << endl;
             break;
         default:
+            cout << "Selecione uma opção válida\n";
             break;
         }
-    } while (escolha != 0);
+    } while (opcao != 4);
     return 0;
 }
