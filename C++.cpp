@@ -1,61 +1,57 @@
 #include <iostream>
 #include <stack>
+#include <string>
 using namespace std;
 
 int main()
 {
-    // Declaração de Variáveis
-    float saldo = 0;    // armazena o saldo do usuário
-    float operacao = 0; // armazena os valores para as operações
-    int opcao = 0;      // escolhe dentre as opções
+    // variáveis //
+    int opcao = 0;
+    stack<string> tarefas;
+    stack<string> tarefas2 = tarefas;
+    string texto;
+    //----------------------------------------------//
     do
     {
-        // Opções
-        cout << "Escolha uma opção abaixo" << endl;
-        cout << "1 - Depositar" << endl;
-        cout << "2 - Sacar" << endl;
-        cout << "3 - Ver Saldo " << endl;
-        cout << "4 - Finalizar" << endl;
-        cin >> opcao; // Requisição de uma opção
-        // Operações de cada opção
+        //----------------------------------------------//
+        cout << "Escolha uma das opções abaixo\n";
+        cout << "1 - Adicionar Tarefa\n";
+        cout << "2 - Remover Tarefa\n";
+        cout << "3 - Listar Tarefas\n";
+        cout << "4 - Copiar pilha 1 para 2\n";
+        //----------------------------------------------//
+        cin >> opcao;
+        cout << "Opção escolhida: " << opcao << endl;
+        cin.ignore();
+        //----------------------------------------------//
+
         switch (opcao)
         {
-        case 1: // realiza o deposito do valor na variável operacao
-            cout << "Seu Saldo é de: " << saldo << endl;
-            cout << "Digite o valor do deposito: " << endl;
-            cin >> operacao;
-            saldo = saldo + operacao;
-            cout << "Seu Saldo é de: " << saldo << endl;
-            cout << "Operação Finalizada" << endl;
+        case 1:
+            cout << "Adicionar Tarefa\n";
+            getline(cin, texto);
+            tarefas.push(texto);
+            cout << "Tarefa Adicionada\n";
             break;
-        case 2: // realiza o saque do valor na variável operacao
-            cout << "Seu Saldo é de: " << saldo << endl;
-            cout << "Digite o valor do saque: " << endl;
-            cin >> operacao;
-            if (saldo > operacao) // verifica se há saldo disponível para transação
+        case 2:
+            cout << "Remover Tarefa\n";
+            tarefas.pop();
+            break;
+        case 3:
+            cout << "Listar Tarefa\n";
+            while (!tarefas2.empty())
             {
-                saldo = saldo - operacao;
-                cout << "Operação Bem Sucedida\n";
+                cout << tarefas2.top() << endl;
+                tarefas2.pop();
             }
-            else
-            {
-                cout << "Operação Não Realizada...\n";
-                cout << "Saldo insulficiente\n";
-            }
-            cout << "Seu Saldo é de: " << saldo << endl;
-            cout << "Operação Finalizada" << endl;
             break;
-        case 3: // mostra o valor de saldo
-            cout << "Seu Saldo é de: " << saldo << endl;
-            cout << "Operação Finalizada" << endl;
-            break;
-        case 4: // encerra o programa
-            cout << "Operação Finalizada" << endl;
+        case 4:
+            cout << "Copiando pilha\n";
+            tarefas2 = tarefas;
             break;
         default:
-            cout << "Selecione uma opção válida\n";
+            cout << "Escolha uma opção válida\n";
             break;
         }
-    } while (opcao != 4);
-    return 0;
+    } while (opcao != 0);
 }
