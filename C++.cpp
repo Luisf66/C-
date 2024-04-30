@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 #include <string>
 using namespace std;
 
@@ -7,18 +7,20 @@ int main()
 {
     // variáveis //
     int opcao = 0;
-    stack<string> tarefas;
-    stack<string> tarefas2 = tarefas;
+    queue<string> tarefas;
+    queue<string> tarefas2 = tarefas;
     string texto;
     //----------------------------------------------//
     do
     {
         //----------------------------------------------//
+        cout << "---------------------------------" << endl;
         cout << "Escolha uma das opções abaixo\n";
         cout << "1 - Adicionar Tarefa\n";
         cout << "2 - Remover Tarefa\n";
         cout << "3 - Listar Tarefas\n";
-        cout << "4 - Copiar pilha 1 para 2\n";
+        cout << "4 - Informações das Tarefas\n";
+        cout << "---------------------------------" << endl;
         //----------------------------------------------//
         cin >> opcao;
         cout << "Opção escolhida: " << opcao << endl;
@@ -28,9 +30,11 @@ int main()
         switch (opcao)
         {
         case 1:
-            cout << "Adicionar Tarefa\n";
+            cout << "Adicionar Tarefa na fila\n";
+            cout << "---------------------------------" << endl;
             getline(cin, texto);
             tarefas.push(texto);
+            cout << "---------------------------------" << endl;
             cout << "Tarefa Adicionada\n";
             break;
         case 2:
@@ -38,16 +42,26 @@ int main()
             tarefas.pop();
             break;
         case 3:
+            tarefas2 = tarefas;
             cout << "Listar Tarefa\n";
+            cout << "---------------------------------" << endl;
             while (!tarefas2.empty())
             {
-                cout << tarefas2.top() << endl;
+                cout << tarefas2.front() << endl;
                 tarefas2.pop();
             }
             break;
         case 4:
-            cout << "Copiando pilha\n";
-            tarefas2 = tarefas;
+            cout << "Sua Primeira Tarefa é\n";
+            cout << "---------------------------------" << endl;
+            cout << tarefas.front() << endl;
+            cout << "---------------------------------" << endl;
+            cout << "Sua Última Tarefa é\n";
+            cout << "---------------------------------" << endl;
+            cout << tarefas.back() << endl;
+            cout << "---------------------------------" << endl;
+            cout << "Quantidade de Tarefas\n";
+            cout << tarefas.size() << endl;
             break;
         default:
             cout << "Escolha uma opção válida\n";
